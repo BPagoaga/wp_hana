@@ -7,14 +7,24 @@
     font-style: normal;
 }
 
+html {
+    font-size: 100%;
+}
+
 h1 {
     font-family: "hitch_hikeregular";
+    font-size: 1.8em;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Define secondary font */
 
 h1,
-p,
 footer {
     text-align: center;
 }

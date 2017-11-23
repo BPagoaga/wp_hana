@@ -30,6 +30,7 @@ const colors = [
 const container = document.getElementById("container");
 const bcg = document.getElementById("background_color");
 const component = document.getElementById("components_color");
+const components = document.querySelectorAll(".component");
 
 colors.forEach(color => {
     // create a cell
@@ -62,7 +63,9 @@ function changeBackgroundColor() {
     document.body.style.backgroundColor = this.value;
 }
 function changeComponentsColor(argument) {
-    document.getElementsByTagName("main")[0].style.backgroundColor = this.value;
+    components.forEach(
+        component => (component.style.backgroundColor = this.value)
+    );
 }
 
 bcg.addEventListener("change", changeBackgroundColor);
