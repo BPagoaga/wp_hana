@@ -18,32 +18,62 @@
         <!-- navbar top fixed-->
         <div class="navbar-fixed">
             <nav class="component">
-                <!-- Mobile nav-->
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                </ul>
+                <!-- Hamburger -->
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
               <div class="nav-wrapper flex-container">
                 <h1>Häna, vêtements pour bébés</h1>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="sass.html">Mon Compte</a></li>
-                  <li><a href="badges.html">Panier</a></li>
+                  <li><a href="#"><i class="material-icons">account_circle</i>Mon Compte</a></li>
+                  <li><a href="#"><i class="material-icons">shopping_cart</i>Panier</a></li>
                 </ul>
               </div>
             </nav>
         </div>
+        <!-- Mobile nav-->
+        <ul class="side-nav" id="mobile-demo">
+            <li>
+                <a href="homepage.html">
+                    <i class="material-icons">home</i>Accueil</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    Catalogue</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">mail_outline</i>Contact</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">account_circle</i>Mon Compte</a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="material-icons">shopping_cart</i>Panier</a>
+            </li>
+        </ul>
         <div class="container">
             <img src="styleguide/assets/images/banniere-Hana-test-2.png" class="responsive-img">
             <!-- Navigation principale -->
             <nav class="hide-on-med-and-down">
                 <div class="nav-wrapper">
                     <ul id="nav-mobile" class="left">
-                        <li><a href="sass.html">Sass</a></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">JavaScript</a></li>
+                        <li>
+                            <a href="homepage.html">
+                                <i class="material-icons">home</i>Accueil</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                                Catalogue</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">mail_outline</i>Contact</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -52,7 +82,8 @@
 
     <main>
         <div class="container">
-             <p>Ces deux boutons permettent de changer :</p>
+            <!-- slider best products/our selection -->
+            <p>Ces deux boutons permettent de changer :</p>
             <ul>
                 <li>La couleur du fond de la page</li>
                 <li>La couleur des composants tels que barre de navigation, pieds-de-page</li>
@@ -63,9 +94,41 @@
 
             <h3 class="center">Grille de couleurs</h3>
 
-            <section id="container" class="wrapper"></section>
+            <section id="container" class="wrapper">
+            </section>
+
+            <!-- réassurance -->
+            <div class="divider"></div>
+            <ul class="collection row">
+                <li class="collection-item avatar col s12 m4">
+                        <i class="material-icons circle">local_shipping</i>
+
+                    <span class="title">Title</span>
+                    <p>First Line
+                        <br> Second Line
+                    </p>
+                </li>
+                <li class="collection-item avatar col s12 m4">
+
+                    <i class="material-icons circle">verified_user</i>
+                    <span class="title">Title</span>
+                    <p>First Line
+                        <br> Second Line
+                    </p>
+                </li>
+                <li class="collection-item avatar col s12 m4">
+
+                    <i class="material-icons circle">build</i>
+                    <span class="title">Title</span>
+                    <p>First Line
+                        <br> Second Line
+                    </p>
+                </li>
+            </ul>
+            <!-- réassurance -->
+
+            <!-- top sell -->
         </div>
-       
     </main>
 
     <footer class="page-footer component">
@@ -75,12 +138,13 @@
             <a class="grey-text text-lighten-4 right" href="mailto:hanahandmade.contact@gmail.com">Contact</a>
             </div>
           </div>
-        
+
     </footer>
-    
+
 
     <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://use.fontawesome.com/aef257fb83.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="styleguide/assets/js/colors.js"></script>
     <script type="text/javascript">
