@@ -69,3 +69,17 @@ select {
     top: 50%;
     transform: translateY(-50%);
 }
+
+.hide-on-scroll {
+    transition: all ease 0.3s;
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.hide-on-scroll.hidden {
+    transform: translateY(-100%);
+}
+
+.hide-on-scroll.hidden .flex-container {
+    opacity: 0;
+}

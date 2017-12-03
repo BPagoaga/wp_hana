@@ -17,31 +17,32 @@
     <header>
         <!-- navbar top fixed-->
         <div class="navbar-fixed">
-            <nav class="component">
+            <nav class="component extended hide-on-scroll active">
+              <div class="nav-wrapper flex-container">
                 <!-- Hamburger -->
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
-                    <i class="material-icons">menu</i>
+                    <i class="material-icons">account_circle</i>
                 </a>
-              <div class="nav-wrapper flex-container">
                 <h1>Häna, vêtements pour bébés</h1>
                 <ul class="right hide-on-med-and-down">
                   <li><a href="#"><i class="material-icons">account_circle</i>Mon Compte</a></li>
                   <li><a href="#"><i class="material-icons">shopping_cart</i>Panier</a></li>
                 </ul>
               </div>
+              <div class="nav-content hide-on-large-only">
+                    <ul class="tabs component">
+                        <li class="tab"><a href="homepage.html">
+                    <i class="material-icons">home</i></a></li>
+                        <li class="tab"><a href="#">
+                    <i class="fa fa-book" aria-hidden="true"></i></a></li>
+                        <li class="tab"><a href="#">
+                    <i class="material-icons">shopping_cart</i>Panier</a></li>
+                    </ul>
+                </div>
             </nav>
         </div>
         <!-- Mobile nav-->
         <ul class="side-nav" id="mobile-demo">
-            <li>
-                <a href="homepage.html">
-                    <i class="material-icons">home</i>Accueil</a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-book" aria-hidden="true"></i>
-                    Catalogue</a>
-            </li>
             <li>
                 <a href="#">
                     <i class="material-icons">mail_outline</i>Contact</a>
@@ -49,10 +50,6 @@
             <li>
                 <a href="#">
                     <i class="material-icons">account_circle</i>Mon Compte</a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="material-icons">shopping_cart</i>Panier</a>
             </li>
         </ul>
         <div class="container">
@@ -149,7 +146,38 @@
     <script src="styleguide/assets/js/colors.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            const topNav = document.querySelector('.hide-on-scroll');
+            const topNavHeight = topNav.scrollHeight;
+            // init mobile nav
             $(".button-collapse").sideNav();
+
+            // scrollfire
+            window.addEventListener('scroll', hideTopNav);
+
+            function hideTopNav(e) {
+                if (window.scrollY > topNavHeight) {
+                    topNav.classList.add('hidden');
+                } else {
+                    topNav.classList.remove('hidden');
+                }
+            }
+
+            function debounce(func, wait = 20, immediate = true) {
+            var timeout;
+            return function() {
+                var context = this,
+                    args = arguments;
+                var later = function() {
+                    timeout = null;
+                    if (!immediate) func.apply(context, args);
+                };
+                var callNow = immediate && !timeout;
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+                if (callNow) func.apply(context, args);
+            };
+        }
+            
         })
     </script>
 </body>
