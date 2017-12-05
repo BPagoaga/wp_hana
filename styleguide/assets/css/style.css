@@ -14,12 +14,13 @@ html {
 h1 {
     font-family: "hitch_hikeregular";
     font-size: 1.8em;
+    flex: 1;
 }
 
 .flex-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 /* Define secondary font */
@@ -70,6 +71,17 @@ select {
     transform: translateY(-50%);
 }
 
+.tab {
+    flex: 1;
+}
+
+.tabs .fa {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .hide-on-scroll {
     transition: all ease 0.3s;
     opacity: 1;
@@ -82,4 +94,26 @@ select {
 
 .hide-on-scroll.hidden .flex-container {
     opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        text-align: left;
+    }
+
+    figure {
+        max-width: 67px;
+        margin: 0;
+        margin-right: 10px;
+        display: flex;
+    }
+
+    figure img {
+        width: 100%;
+    }
+
+    .flex-container {
+        width: 70%;
+        margin: 0 auto;
+    }
 }

@@ -23,10 +23,13 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse">
                     <i class="material-icons">account_circle</i>
                 </a>
+                <figure class="hide-on-med-and-down">
+                    <img src="styleguide/assets/images/logo.gif" alt="Logo Häna Handmade Création Artisanale pour bébés">
+                </figure>
                 <h1>Häna, vêtements pour bébés</h1>
                 <ul class="right hide-on-med-and-down">
-                  <li><a href="#"><i class="material-icons">account_circle</i>Mon Compte</a></li>
-                  <li><a href="#"><i class="material-icons">shopping_cart</i>Panier</a></li>
+                  <li><a href="#"><i class="material-icons">account_circle</i></a></li>
+                  <li><a href="#"><i class="material-icons">shopping_cart</i></a></li>
                 </ul>
               </div>
               <div class="nav-content hide-on-large-only">
@@ -146,36 +149,38 @@
     <script src="styleguide/assets/js/colors.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            const topNav = document.querySelector('.hide-on-scroll');
-            const topNavHeight = topNav.scrollHeight;
-            // init mobile nav
-            $(".button-collapse").sideNav();
+            if (window.innerWidth < 768) {
+                const topNav = document.querySelector('.hide-on-scroll');
+                const topNavHeight = topNav.scrollHeight;
+                // init mobile nav
+                $(".button-collapse").sideNav();
 
-            // scrollfire
-            window.addEventListener('scroll', hideTopNav);
+                // scrollfire
+                window.addEventListener('scroll', hideTopNav);
 
-            function hideTopNav(e) {
-                if (window.scrollY > topNavHeight) {
-                    topNav.classList.add('hidden');
-                } else {
-                    topNav.classList.remove('hidden');
+                function hideTopNav(e) {
+                    if (window.scrollY > topNavHeight) {
+                        topNav.classList.add('hidden');
+                    } else {
+                        topNav.classList.remove('hidden');
+                    }
                 }
-            }
 
-            function debounce(func, wait = 20, immediate = true) {
-            var timeout;
-            return function() {
-                var context = this,
-                    args = arguments;
-                var later = function() {
-                    timeout = null;
-                    if (!immediate) func.apply(context, args);
+                function debounce(func, wait = 20, immediate = true) {
+                var timeout;
+                return function() {
+                    var context = this,
+                        args = arguments;
+                    var later = function() {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
                 };
-                var callNow = immediate && !timeout;
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-                if (callNow) func.apply(context, args);
-            };
+            }
         }
             
         })
